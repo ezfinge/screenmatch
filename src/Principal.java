@@ -1,4 +1,7 @@
+import br.com.alura.screenmatch.modelos.Titulo;
 import br.com.alura.screenmatch.modelos.Filme;
+import br.com.alura.screenmatch.modelos.Serie;
+
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -6,30 +9,34 @@ public class Principal
 {
     public static void main(String[] args)
     {
-        Filme meuFilme = new Filme();
+        Filme f = new Filme();
 
-//      meuFilme.titulo = ;
-        meuFilme.setNome("Trovão Tropical");
-//      meuFilme.ano = 2010;
-        meuFilme.setAno(2010);
-//      meuFilme.duracao = 120;
-        meuFilme.setDuracao(120);
+//      f.titulo = ;
+        f.setNome("Trovão Tropical");
+//      f.ano = 2010;
+        f.setAno(2010);
+//      f.duracao = 120;
+        f.setDuracao(120);
 
-//        System.out.println(meuFilme.titulo);
-//        System.out.println(meuFilme.ano);
-//        System.out.println(meuFilme.duracao);
+//        System.out.println(f.titulo);
+//        System.out.println(f.ano);
+//        System.out.println(f.duracao);
 
-//        meuFilme.exibeFichaTecnica();
-//        meuFilme.avalia(9);
-//        meuFilme.avalia(4);
-//        meuFilme.avalia(8.7);
+//        f.exibeFichaTecnica();
+//        f.avalia(9);
+//        f.avalia(4);
+//        f.avalia(8.7);
 
-        System.out.println("nota do filme: " + meuFilme.getSomaDasAvaliacoes());
-        System.out.println("avaliacoes: " + meuFilme.getTotalDeAvaliacoes());
-        System.out.println("media: " + meuFilme.pegaMedia());
-//        meuFilme.somaDasAvaliacoes = 10;
-//        meuFilme.totalDeAvaliacoes = 1;
-        System.out.println(meuFilme.pegaMedia());
+        System.out.println("nota do filme: " + f.getSomaDasAvaliacoes());
+        System.out.println("avaliacoes: " + f.getTotalDeAvaliacoes());
+        System.out.println("media: " + f.pegaMedia());
+//        f.somaDasAvaliacoes = 10;
+//        f.totalDeAvaliacoes = 1;
+        System.out.println(f.pegaMedia());
+
+        Serie s = new Serie();
+            s.setNome("Shameless");
+
 
     }
 }
