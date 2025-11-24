@@ -1,6 +1,6 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Filme {
+public class Serie {
     private String nome;
     private String classificacao;
     private String tipo;
@@ -10,6 +10,9 @@ public class Filme {
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private double duracao;
+    int temporada;
+    int episodiosPorTemporada;
+    int minutosPorEpisodio;
 
 
     void avalia(double nota ){

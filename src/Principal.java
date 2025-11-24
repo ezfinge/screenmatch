@@ -9,7 +9,7 @@ public class Principal
         Filme meuFilme = new Filme();
 
 //      meuFilme.titulo = ;
-        meuFilme.setTitulo("Trovão Tropical");
+        meuFilme.setNome("Trovão Tropical");
 //      meuFilme.ano = 2010;
         meuFilme.setAno(2010);
 //      meuFilme.duracao = 120;

@@ -1,6 +1,6 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Filme {
+public class Titulo {
     private String nome;
     private String classificacao;
     private String tipo;
@@ -95,3 +95,6 @@ public class Filme {
 
     }
 }
+
+
+
