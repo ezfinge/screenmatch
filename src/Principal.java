@@ -4,7 +4,27 @@ public class Principal
 {
     public static void main(String[] args)
     {
+        Filme meuFilme = new Filme();
 
+        meuFilme.titulo = "Trovão Tropical";
+        meuFilme.ano = 2010;
+        meuFilme.duracao = 120;
+
+//        System.out.println(meuFilme.titulo);
+//        System.out.println(meuFilme.ano);
+//        System.out.println(meuFilme.duracao);
+
+        meuFilme.exibeFichaTecnica();
+        meuFilme.avalia(9);
+        meuFilme.avalia(4);
+        meuFilme.avalia(8.7);
+
+        System.out.println("nota do filme: " + meuFilme.getSomaDasAvaliacoes());
+        System.out.println("avaliacoes: " + meuFilme.getTotalDeAvaliacoes());
+        System.out.println("media: " + meuFilme.pegaMedia());
+//        meuFilme.somaDasAvaliacoes = 10;
+//        meuFilme.totalDeAvaliacoes = 1;
+        System.out.println(meuFilme.pegaMedia());
 
     }
 }
