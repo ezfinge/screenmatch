@@ -86,7 +86,7 @@ public class Titulo {
         return (int) duracaoEmMinutos;
     }
 
-    public void setDuracao(int duracao) {
+    public void setDuracaoEmMinutos(int duracao) {
         this.duracaoEmMinutos = duracao;
     }
 
