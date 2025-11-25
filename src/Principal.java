@@ -1,3 +1,4 @@
+import br.com.alura.screenmatch.calculo.CalculadoraDeTempo;
 import br.com.alura.screenmatch.modelos.Titulo;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
@@ -11,32 +12,37 @@ public class Principal
     {
         Filme f = new Filme();
 
-//      f.titulo = ;
-        f.setNome("Trovão Tropical");
-//      f.ano = 2010;
-        f.setAno(2010);
-//      f.duracao = 120;
-        f.setDuracao(120);
+    //      f.titulo = ;
+            f.setNome("Trovão Tropical");
+    //      f.ano = 2010;
+            f.setAno(2010);
+    //      f.duracao = 120;
+            f.setDuracao(120);
 
-//        System.out.println(f.titulo);
-//        System.out.println(f.ano);
-//        System.out.println(f.duracao);
+    //        System.out.println(f.titulo);
+    //        System.out.println(f.ano);
+    //        System.out.println(f.duracao);
 
-//        f.exibeFichaTecnica();
-//        f.avalia(9);
-//        f.avalia(4);
-//        f.avalia(8.7);
+    //        f.exibeFichaTecnica();
+    //        f.avalia(9);
+    //        f.avalia(4);
+    //        f.avalia(8.7);
 
-        System.out.println("nota do filme: " + f.getSomaDasAvaliacoes());
-        System.out.println("avaliacoes: " + f.getTotalDeAvaliacoes());
-        System.out.println("media: " + f.pegaMedia());
-//        f.somaDasAvaliacoes = 10;
-//        f.totalDeAvaliacoes = 1;
-        System.out.println(f.pegaMedia());
+            System.out.println("nota do filme: " + f.getSomaDasAvaliacoes());
+            System.out.println("avaliacoes: " + f.getTotalDeAvaliacoes());
+            System.out.println("media: " + f.pegaMedia());
+    //        f.somaDasAvaliacoes = 10;
+    //        f.totalDeAvaliacoes = 1;
+            System.out.println(f.pegaMedia());
 
         Serie s = new Serie();
             s.setNome("Shameless");
+            s.setAno(2010);
+            s.setMinutosPorEpisodio(50);
+            System.out.println("tempo da maratona: " + s.getDuracaoEmMinutos());
 
-
+        CalculadoraDeTempo calc = new CalculadoraDeTempo();
+            calc.inclui(f);
+            System.out.println(calc.getTempoTotal());
     }
 }

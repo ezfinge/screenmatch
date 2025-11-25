@@ -9,7 +9,8 @@ public class Titulo {
     private int ano;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
-    private double duracao;
+    private double duracaoEmMinutos;
+
 
 
     void avalia(double nota ){
@@ -81,12 +82,12 @@ public class Titulo {
         this.incluidoNoPlano = incluidoNoPlano;
     }
 
-    public double getDuracao() {
-        return duracao;
+    public int getDuracaoEmMinutos() {
+        return (int) duracaoEmMinutos;
     }
 
-    public void setDuracao(double duracao) {
-        this.duracao = duracao;
+    public void setDuracao(int duracao) {
+        this.duracaoEmMinutos = duracao;
     }
 
     void exibeFichaTecnica(){

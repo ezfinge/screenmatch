@@ -39,4 +39,7 @@ public class Serie extends Titulo{
         this.ativa = ativa;
     }
 
+    public int getDuracaoEmMinutos(){
+        return temporada * episodiosPorTemporada * getMinutosPorEpisodio();
+    }
 }//fim classe
