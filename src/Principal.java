@@ -27,8 +27,9 @@ public class Principal
         System.out.println("nota do filme: " + meuFilme.getSomaDasAvaliacoes());
         System.out.println("avaliacoes: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println("media: " + meuFilme.pegaMedia());
-
-        meuFilme.somaDasAvaliacoes = 10;
+//        meuFilme.somaDasAvaliacoes = 10;
+//        meuFilme.totalDeAvaliacoes = 1;
+        System.out.println(meuFilme.pegaMedia());
 
     }
 }
