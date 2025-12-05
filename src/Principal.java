@@ -1,6 +1,8 @@
 
 import br.com.alura.screenmatch.calculo.CalculadoraDeTempo;
 
+import br.com.alura.screenmatch.calculo.FiltroRecomendacao;
+import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -19,36 +21,14 @@ public class Principal
 //      f.duracao = 120;
         f.setDuracao(120);
 
-//        System.out.println(f.titulo);
-//        System.out.println(f.ano);
-//        System.out.println(f.duracao);
 
-//        f.exibeFichaTecnica();
-//        f.avalia(9);
-//        f.avalia(4);
-//        f.avalia(8.7);
-
-    //      f.titulo = ;
             f.setNome("Trovão Tropical");
-    //      f.ano = 2010;
             f.setAno(2010);
-    //      f.duracao = 120;
             f.setDuracaoEmMinutos(120);
-
-    //        System.out.println(f.titulo);
-    //        System.out.println(f.ano);
-    //        System.out.println(f.duracao);
-
-    //        f.exibeFichaTecnica();
-    //        f.avalia(9);
-    //        f.avalia(4);
-    //        f.avalia(8.7);
 
             System.out.println("nota do filme: " + f.getSomaDasAvaliacoes());
             System.out.println("avaliacoes: " + f.getTotalDeAvaliacoes());
             System.out.println("media: " + f.pegaMedia());
-    //        f.somaDasAvaliacoes = 10;
-    //        f.totalDeAvaliacoes = 1;
             System.out.println(f.pegaMedia());
 
         Serie s = new Serie();
@@ -65,20 +45,14 @@ public class Principal
         //teste simples
         Filme outrof = new Filme();
             outrof.setNome("branquelas");
-            //      f.ano = 2010;
             outrof.setAno(2010);
-            //      f.duracao = 120;
             outrof.setDuracaoEmMinutos(80);
-        //CalculadoraDeTempo calc = new CalculadoraDeTempo();
             calc.inclui(outrof);
             System.out.println(calc.getTempoTotal());
 
         Filme outrof2 = new Filme();
-            //CalculadoraDeTempo calc = new CalculadoraDeTempo();
             outrof2.setNome("branquelas");
-            //      f.ano = 2010;
             outrof2.setAno(2010);
-            //      f.duracao = 120;
             outrof2.setDuracaoEmMinutos(80);
 
             calc.inclui(outrof2);
@@ -91,5 +65,13 @@ public class Principal
 //        f.totalDeAvaliacoes = 1;
 //        System.out.println(f.pegaMedia());
 
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+            filtro.filtra(f);
+
+        Episodio ep = new Episodio();
+            ep.setNumero(1);
+            ep.setSerie(s);
+            ep.setTotalVisualizacoes(300);
+            filtro.filtra(ep);
     }
 }
