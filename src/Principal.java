@@ -82,14 +82,14 @@ public class Principal
             outrof2.setDuracaoEmMinutos(80);
 
             calc.inclui(outrof2);
-            System.out.println(calc.getTempoTotal());
-
-        System.out.println("nota do filme: " + f.getSomaDasAvaliacoes());
-        System.out.println("avaliacoes: " + f.getTotalDeAvaliacoes());
-        System.out.println("media: " + f.pegaMedia());
+//            System.out.println(calc.getTempoTotal());
+//
+//        System.out.println("nota do filme: " + f.getSomaDasAvaliacoes());
+//        System.out.println("avaliacoes: " + f.getTotalDeAvaliacoes());
+//        System.out.println("media: " + f.pegaMedia());
 //        f.somaDasAvaliacoes = 10;
 //        f.totalDeAvaliacoes = 1;
-        System.out.println(f.pegaMedia());
+//        System.out.println(f.pegaMedia());
 
     }
 }
