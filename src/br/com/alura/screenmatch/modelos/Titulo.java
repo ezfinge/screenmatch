@@ -17,7 +17,7 @@ public class Titulo {
     }
 
 
-    void avalia(double nota ){
+    public void avalia(double nota ){
         somaDasAvaliacoes += nota;
         totalDeAvaliacoes ++;
     }
