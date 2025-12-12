@@ -9,6 +9,12 @@ public class Titulo {
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int duracaoEmMinutos;
+    private int avalia;
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.ano = anoDeLancamento;
+    }
 
 
     void avalia(double nota ){
@@ -78,6 +84,14 @@ public class Titulo {
         System.out.println("Nome do filme: " + getNome());
         System.out.println("Ano de lançamento: " + getAno());
 
+    }
+
+    public int getAvalia() {
+        return avalia;
+    }
+
+    public void setAvalia(int avalia) {
+        this.avalia = avalia;
     }
 }
 
