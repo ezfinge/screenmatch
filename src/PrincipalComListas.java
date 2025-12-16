@@ -2,8 +2,7 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -16,7 +15,7 @@ public class PrincipalComListas {
         Serie serie1 = new Serie("chaves",1980);
             serie1.avalia(10);
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new LinkedList<>();
             lista.add(filme1);
             lista.add(filme2);
             lista.add(filme3);
@@ -39,12 +38,23 @@ public class PrincipalComListas {
             buscaPorArtista.add("sharon stone");
 
         Collections.sort(buscaPorArtista); //ordeando lista por nome
-        System.out.println(buscaPorArtista);
+            System.out.println(buscaPorArtista);
 
-//
+            System.out.printf("----------------------------------------\n");
+
+        Collections.sort(lista);
+            for(Titulo item : lista){
+                System.out.println(item.getNome());
+            }
+
+        System.out.printf("----------------------------------------\n");
+
+        lista.sort(Comparator.comparing(Titulo::getAno));//comparando atualmente.
+              System.out.println("ordenando por ano..");
+              System.out.println(lista);
 
 
 
-    }
+    }//fim main
 
-}
+}//fim classe
