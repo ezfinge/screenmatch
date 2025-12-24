@@ -1,3 +1,5 @@
+package Principal;
+
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
@@ -40,9 +42,9 @@ public class PrincipalComListas {
         Collections.sort(buscaPorArtista); //ordeando lista por nome
             System.out.println(buscaPorArtista);
 
-            System.out.printf("----------------------------------------\n");
+        System.out.printf("----------------------------------------\n");
 
-        Collections.sort(lista);
+        Collections.sort(lista); //ordenando array
             for(Titulo item : lista){
                 System.out.println(item.getNome());
             }

@@ -103,6 +103,11 @@ public class Titulo implements Comparable<Titulo>{
     public String toString() {
         return "Nome: " + this.getNome() + " - " + this.getAno();
     }
+
+    //http://www.omdbapi.com/?i=tt3896198&apikey=8b0601ee
+
+    //https://www.omdbapi.com/?i=tt3896198&apikey=8b0601ee
+
 }
 
 
