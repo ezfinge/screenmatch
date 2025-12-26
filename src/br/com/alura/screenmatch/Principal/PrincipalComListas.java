@@ -42,16 +42,16 @@ public class PrincipalComListas {
         Collections.sort(buscaPorArtista); //ordeando lista por nome
             System.out.println(buscaPorArtista);
 
-            System.out.printf("----------------------------------------\n");
+        System.out.printf("----------------------------------------\n");
 
-        Collections.sort(lista);
+        Collections.sort(lista); //ordenando array
             for(Titulo item : lista){
                 System.out.println(item.getNome());
             }
 
         System.out.printf("----------------------------------------\n");
 
-        lista.sort(Comparator.comparing(Titulo::getAno));//comparando atualmente.
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));//comparando atualmente.
               System.out.println("ordenando por ano..");
               System.out.println(lista);
 

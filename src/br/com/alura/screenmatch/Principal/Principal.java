@@ -55,7 +55,7 @@ public class Principal
 
         Filme filme3 =  new Filme("superbad",2009);
            // filme3.setNome();
-            filme3.setAno(2010);
+            filme3.setAnoDeLancamento(2010);
             filme3.setDuracaoEmMinutos(80);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();

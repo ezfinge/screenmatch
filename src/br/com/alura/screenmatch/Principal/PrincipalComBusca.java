@@ -1,5 +1,11 @@
 package Principal;
 
+import br.com.alura.screenmatch.modelos.Titulo;
+import br.com.alura.screenmatch.modelos.TituloOmdb;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -28,15 +34,26 @@ public class PrincipalComBusca {
                 //fazendo requisição..
                 .build();
 
-
-
         // http responde -java doc
         //https://docs.oracle.com/en/java/javase/17/docs/api/java.net.http/java/net/http/HttpResponse.html
 
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
+        String json = response.body();
         System.out.println(response.body());
+
+        Gson gson = new GsonBuilder() //tratando o case  sensitive
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();
+        //https://github.com/google/gson/blob/main/UserGuide.md
+        //desiarialização
+        //Titulo t = gson.fromJson(json, Titulo.class);
+        TituloOmdb tituloOmdb = gson.fromJson(json, TituloOmdb.class);
+        System.out.println(tituloOmdb);
+        Titulo t = new Titulo(tituloOmdb);
+        System.out.println("titulo ja convertido..");
+        System.out.println(t);
 
     }//fim main
 }//fim classe

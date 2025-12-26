@@ -1,12 +1,15 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Titulo implements Comparable<Titulo>{
+import com.google.gson.annotations.SerializedName;
 
+public class Titulo implements Comparable<Titulo>{
+    @SerializedName("Title")
     private String nome;
     private String tipo;
     private String sinopse;
     private int totalDeAvaliacoes;
-    private int ano;
+    @SerializedName("Year")
+    private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int duracaoEmMinutos;
@@ -14,7 +17,13 @@ public class Titulo implements Comparable<Titulo>{
 
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
-        this.ano = anoDeLancamento;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(TituloOmdb tituloOmdb) {
+        this.nome = tituloOmdb.title();
+        this.anoDeLancamento = Integer.valueOf(tituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(tituloOmdb.runtime().substring(0,2));//substring pegando caracteres especificos.
     }
 
 
@@ -54,11 +63,11 @@ public class Titulo implements Comparable<Titulo>{
     public void setSinopse(String sinopse) {
         this.sinopse = sinopse;
     }
-    public int getAno() {
-        return ano;
+    public int getAnoDeLancamento() {
+        return anoDeLancamento;
     }
-    public void setAno(int ano) {
-        this.ano = ano;
+    public void setAnoDeLancamento(int anoDeLancamento) {
+        this.anoDeLancamento = anoDeLancamento;
     }
     public boolean isIncluidoNoPlano() {
         return incluidoNoPlano;
@@ -83,7 +92,7 @@ public class Titulo implements Comparable<Titulo>{
     }
     void exibeFichaTecnica(){
         System.out.println("Nome do filme: " + getNome());
-        System.out.println("Ano de lançamento: " + getAno());
+        System.out.println("Ano de lançamento: " + getAnoDeLancamento());
 
     }
 
@@ -99,10 +108,16 @@ public class Titulo implements Comparable<Titulo>{
     public int compareTo(Titulo otroTitulo) { //comparando objetos
         return this.getNome().compareToIgnoreCase(otroTitulo.getNome());
     }
-
+    @Override
     public String toString() {
-        return "Nome: " + this.getNome() + " - " + this.getAno();
+        return "nome= " + this.getNome() + ", anoDeLancamento= "+ this.getAnoDeLancamento() + " duração= " +getDuracaoEmMinutos();
     }
+
+
+    //http://www.omdbapi.com/?i=tt3896198&apikey=8b0601ee
+
+    //https://www.omdbapi.com/?i=tt3896198&apikey=8b0601ee
+
 }
 
 
