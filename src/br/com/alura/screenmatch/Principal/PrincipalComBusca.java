@@ -12,6 +12,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpHeaders;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.sql.SQLOutput;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.Scanner;
@@ -51,9 +52,16 @@ public class PrincipalComBusca {
         //Titulo t = gson.fromJson(json, Titulo.class);
         TituloOmdb tituloOmdb = gson.fromJson(json, TituloOmdb.class);
         System.out.println(tituloOmdb);
-        Titulo t = new Titulo(tituloOmdb);
-        System.out.println("titulo ja convertido..");
-        System.out.println(t);
+        try{
+            Titulo t = new Titulo(tituloOmdb);
+            System.out.println("titulo ja convertido..");
+            System.out.println(t);
+        } catch (NumberFormatException e) {
+            System.out.println("ERRO:");
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("finalizou corretamente.");
 
     }//fim main
 }//fim classe
