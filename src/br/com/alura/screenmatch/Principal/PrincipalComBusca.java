@@ -1,5 +1,6 @@
 package Principal;
 
+import br.com.alura.screenmatch.excecao.ErroDeConversaoDeAnoException;
 import br.com.alura.screenmatch.modelos.Titulo;
 import br.com.alura.screenmatch.modelos.TituloOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -25,7 +26,7 @@ public class PrincipalComBusca {
         System.out.printf("qual o filme?");
         var busca = leitura.nextLine();
 
-        String endereco = "http://www.omdbapi.com/?t="+busca+"&apikey=8b0601ee";
+        String endereco = "http://www.omdbapi.com/?t="+busca.replace(" ", "+")+"&apikey=8b0601ee";
 
         //https://docs.oracle.com/en/java/javase/17/docs/api/java.net.http/java/net/http/HttpRequest.html
         //http request java doc
@@ -57,7 +58,11 @@ public class PrincipalComBusca {
             System.out.println("titulo ja convertido..");
             System.out.println(t);
         } catch (NumberFormatException e) {
-            System.out.println("ERRO:");
+            System.out.println("Aconteceu um erro:");
+            System.out.println(e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("algum de argumento na busca, verifique a url.");
+        } catch (ErroDeConversaoDeAnoException e) {
             System.out.println(e.getMessage());
         }
 
